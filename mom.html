@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #e4fff7;
+      }
+
+      :root {
+        --text: #5362f6; /* Blue */
+        --shadow: #e485f8; /* Pink */
+      }
+      .playful {
+        color: var(--text);
+        text-shadow: 6px 6px var(--shadow), 5.75px 5.75px var(--shadow),
+          5.5px 5.5px var(--shadow), 5.25px 5.25px var(--shadow),
+          5px 5px var(--shadow), 4.75px 4.75px var(--shadow),
+          4.5px 4.5px var(--shadow), 4.25px 4.25px var(--shadow),
+          4px 4px var(--shadow), 3.75px 3.75px var(--shadow),
+          3.5px 3.5px var(--shadow), 3.25px 3.25px var(--shadow),
+          3px 3px var(--shadow), 2.75px 2.75px var(--shadow),
+          2.5px 2.5px var(--shadow), 2.25px 2.25px var(--shadow),
+          2px 2px var(--shadow), 1.75px 1.75px var(--shadow),
+          1.5px 1.5px var(--shadow), 1.25px 1.25px var(--shadow),
+          1px 1px var(--shadow), 0.75px 0.75px var(--shadow),
+          0.5px 0.5px var(--shadow), 0.25px 0.25px var(--shadow);
+      }
+
+      .playful span {
+        position: relative;
+        color: #5362f6;
+        text-shadow: textShadow(0.25, 6, #e485f8);
+        animation: scatter 1.75s infinite;
+      }
+
+      .playful span:nth-child(2n) {
+        color: #ed625c;
+        text-shadow: textShadow(0.25, 6, #f2a063);
+        animation-delay: 0.3s;
+      }
+
+      .playful span:nth-child(3n) {
+        color: #ffd913;
+        text-shadow: textShadow(0.25, 6, #6ec0a9);
+        animation-delay: 0.15s;
+      }
+
+      .playful span:nth-child(5n) {
+        color: #555bff;
+        text-shadow: textShadow(0.25, 6, #e485f8);
+        animation-delay: 0.4s;
+      }
+
+      .playful span:nth-child(7n),
+      .playful span:nth-child(11n) {
+        color: #ff9c55;
+        text-shadow: textShadow(0.25, 6, #ff5555);
+        animation-delay: 0.25s;
+      }
+
+      @keyframes scatter {
+        0% {
+          top: 0;
+        }
+        50% {
+          top: -10px;
+        }
+        100% {
+          top: 0;
+        }
+      }
+
+      h1 {
+        font-size: 65px;
+        text-transform: uppercase;
+        font-family: "Archivo Black", "Archivo", sans-serif;
+        font-weight: normal;
+        display: block;
+        width: 666px;
+        max-width: 80vw;
+        min-height: 90px;
+        height: auto;
+        text-align: center;
+        margin: 10rem auto;
+        margin: calc(50vh - 5rem) auto;
+      }
+    </style>
+  </head>
+  <body>
+    <link
+      href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+
+    <h1 class="playful" aria-label="Wash your hands">
+      <img
+        src="./assets/flower.gif"
+        alt="Flower"
+        style="width: 400px; height: 300px"
+      />
+      <br />
+      <span aria-hidden="true">L</span><span aria-hidden="true">o</span
+      ><span aria-hidden="true">v</span><span aria-hidden="true">e</span
+      ><span aria-hidden="true"> </span><span aria-hidden="true">y</span
+      ><span aria-hidden="true">o</span><span aria-hidden="true">u</span
+      ><span aria-hidden="true"> </span><span aria-hidden="true">m</span
+      ><span aria-hidden="true">o</span><span aria-hidden="true">m</span
+      ><span aria-hidden="true">!</span>
+    </h1>
+  </body>
+</html>
