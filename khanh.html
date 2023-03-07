@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sriracha"
+    />
+
+    <style>
+      * {
+        font-family: "Sriracha";
+      }
+
+      body {
+        background-image: url("./assets/background.jpg");
+      }
+
+      .card {
+        background-color: transparent;
+        display: block;
+        width: 600px;
+        max-width: 80vw;
+        min-height: 90px;
+        text-align: center;
+        margin: 10rem auto;
+        margin: calc(36vh - 8rem) auto;
+        position: relative;
+        perspective: 1000px;
+        background-image: url("./assets/bum.mp4");
+      }
+
+      x-sign {
+        --interval: 1s;
+        display: block;
+        text-shadow: 0 0 10px var(--color1), 0 0 20px var(--color2),
+          0 0 40px var(--color3), 0 0 80px var(--color4);
+        will-change: filter, color;
+        filter: saturate(60%);
+        color: tomato;
+        --color1: orangered;
+        --color2: firebrick;
+        --color3: maroon;
+        --color4: darkred;
+        top: -20px;
+        font-size: 3rem;
+      }
+
+      @keyframes flicker {
+        50% {
+          color: white;
+          filter: saturate(200%) hue-rotate(20deg);
+        }
+      }
+
+      video {
+        width: 500px;
+        height: auto;
+      }
+    </style>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="card">
+      <x-sign id="text-sign">Ọ bùm ơi<br />Love youuuuuuuu</x-sign>
+      <video id="myVideo" onmousedown="playVideo()" onmouseup="stopVideo()" loop>
+        <source src="./assets/bum.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <script>
+      var vid = document.getElementById("myVideo");
+      var textSign = document.getElementById("text-sign");
+      function playVideo() {
+        textSign.style.animation =
+          "flicker steps(100) var(--interval) 0.4s infinite";
+
+        vid.play();
+      }
+      function stopVideo() {
+        vid.pause();
+        textSign.style.animation = "none";
+      }
+
+      $("#myVideo").on("touchstart", function (ev) {
+        playVideo()
+        setTimeout(stopVideo, 2200);
+        return false;
+      });
+    </script>
+  </body>
+</html>
